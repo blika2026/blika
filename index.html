@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ff6a00">
+  <meta name="description" content="BLIKA.al - Bli më shumë, paguaj më pak.">
+  <title>BLIKA.al — Marketplace Shqip</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">🚚 Dërgesa në gjithë Shqipërinë &nbsp; • &nbsp; 💵 Pagesë në dorëzim &nbsp; • &nbsp; 🛡️ Blerje e sigurt</div>
+
+  <header class="header">
+    <a class="logo" href="#"><span>B</span>LIKA<span class="dot">.</span>al</a>
+    <div class="search">
+      <input id="searchInput" type="search" placeholder="Çfarë po kërkon?">
+      <button onclick="searchProducts()">🔎</button>
+    </div>
+    <div class="actions">
+      <button class="iconBtn" title="Llogaria">👤</button>
+      <button class="iconBtn" title="Favoritet">♡</button>
+      <button class="cartBtn" onclick="toggleCart()">🛒 <b id="cartCount">0</b></button>
+    </div>
+  </header>
+
+  <nav class="nav">
+    <div class="container navInner">
+      <button class="catMenu" onclick="scrollToSection('categories')">☰ Kategoritë</button>
+      <a href="#deals">Ofertat e ditës</a>
+      <a href="#best">Më të shiturat</a>
+      <a href="#new">Të rejat</a>
+      <a href="#how">Si funksionon?</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero container">
+      <div class="heroText">
+        <span class="pill">🔥 OFERTA TË REJA ÇDO DITË</span>
+        <h1>Bli më shumë,<br><strong>paguaj më pak.</strong></h1>
+        <p>Marketplace shqiptar për produkte të përditshme, elektronikë, modë, shtëpi dhe shumë më tepër.</p>
+        <button class="primary" onclick="scrollToSection('deals')">BLI TANI →</button>
+      </div>
+      <div class="heroCards">
+        <div class="benefit">⚡ <b>Dërgesë e shpejtë</b><small>Në gjithë Shqipërinë</small></div>
+        <div class="benefit">💳 <b>Pagesë e sigurt</b><small>Online ose në dorëzim</small></div>
+        <div class="benefit">⭐ <b>Produkte të zgjedhura</b><small>Çmime konkurruese</small></div>
+        <div class="benefit">💬 <b>Mbështetje</b><small>Na kontakto kur të duash</small></div>
+      </div>
+    </section>
+
+    <section id="categories" class="section container">
+      <div class="sectionHead"><h2>Kategoritë</h2><span>Eksploro BLIKA</span></div>
+      <div id="categoryGrid" class="categoryGrid"></div>
+    </section>
+
+    <section id="deals" class="section container">
+      <div class="sectionHead"><h2>OFERTAT E DITËS 🔥</h2><button class="linkBtn" onclick="showAll()">Shiko të gjitha →</button></div>
+      <div id="dealGrid" class="productGrid"></div>
+    </section>
+
+    <section id="best" class="section container">
+      <div class="sectionHead"><h2>PRODUKTET MË TË SHITURA</h2></div>
+      <div id="bestGrid" class="productGrid"></div>
+    </section>
+
+    <section id="new" class="section container">
+      <div class="sectionHead"><h2>TË REJAT</h2></div>
+      <div id="newGrid" class="productGrid"></div>
+    </section>
+
+    <section id="how" class="how container">
+      <div><span>01</span><h3>Zgjidh produktin</h3><p>Gjej atë që të duhet me kërkim ose kategori.</p></div>
+      <div><span>02</span><h3>Porosit online</h3><p>Shto në shportë dhe plotëso të dhënat e dorëzimit.</p></div>
+      <div><span>03</span><h3>Merr porosinë</h3><p>Paguaj online ose në dorëzim dhe ndiq porosinë.</p></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footerGrid">
+      <div><a class="logo" href="#"><span>B</span>LIKA<span class="dot">.</span>al</a><p>Marketplace shqiptar. Bli më shumë, paguaj më pak.</p></div>
+      <div><h4>Ndihmë</h4><a href="#">Kontakt</a><a href="#">Transporti</a><a href="#">Kthimet</a></div>
+      <div><h4>BLIKA</h4><a href="#">Rreth nesh</a><a href="#">Shitësit</a><a href="#">Kushtet</a></div>
+      <div><h4>Na ndiq</h4><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">Facebook</a></div>
+    </div>
+    <div class="copyright">© 2026 BLIKA.al — Prototype MVP</div>
+  </footer>
+
+  <aside id="cart" class="cart">
+    <div class="cartHead"><h2>Shporta</h2><button onclick="toggleCart()">✕</button></div>
+    <div id="cartItems"></div>
+    <div class="cartBottom">
+      <div><span>Total</span><strong id="cartTotal">0 L</strong></div>
+      <button class="primary full" onclick="checkout()">Vazhdo te porosia →</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay" onclick="toggleCart()"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
